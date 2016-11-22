@@ -1,10 +1,10 @@
-﻿package site.luoyu.learn;
+package site.luoyu.learn;
 
 import java.io.File;
 
 public class javaFilePath {
 	public static void main(String[] args) {
-		System.out.println("相对路径");
+		System.out.println("文件路径");
 		javaFilePath pathTest = new javaFilePath();
 		pathTest.relativePath(".");
 		pathTest.relativePath("./");
