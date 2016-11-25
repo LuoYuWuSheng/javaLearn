@@ -1,11 +1,11 @@
-package site.luoyu.RMI.server.javaRMI;
+package site.luoyu.RMI.server;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
-public class mainclass {
+public class RMIServer {
 	
 	public static void main(String[] args){
 		 try {

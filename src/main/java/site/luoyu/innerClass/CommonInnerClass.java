@@ -22,7 +22,7 @@ public class CommonInnerClass {
         return new InnerClass();
     }
 
-    public  class InnerClass {
+    private class InnerClass {
         /**
          * 与外部类的名称相同
          */
@@ -40,6 +40,5 @@ public class CommonInnerClass {
         CommonInnerClass.InnerClass innerClass = commonInnerClass.releaseInner();
         //在外部类的作用域外无法创建内部类，缺少this指针。不知道有没有显示的方法可以创建
 //        CommonInnerClass.InnerClass testCreate = new CommonInnerClass.InnerClass(commonInnerClass);
-
     }
 }

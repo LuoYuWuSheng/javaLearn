@@ -1,4 +1,6 @@
-package site.luoyu.RMI.server.javaRMI;
+package site.luoyu.RMI.server;
+
+import site.luoyu.RMI.remoteInterface;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
