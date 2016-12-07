@@ -12,7 +12,7 @@ public class ThreadAPI extends Thread{
     }
 
     /**
-     * 为什么Runnable不能抛出异常，而在main中可以？
+     * 线程的run方法不能抛出任何被检测异常，
      * @param args
      * @throws InterruptedException
      */
