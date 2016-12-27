@@ -13,9 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Bank {
     //add a log
     private Lock bankLock = new ReentrantLock();
+
     //condition 容易造成死锁
     private Condition sufficientFunds;
     private final double[] accounts;
+
     public Bank(int n,double initilBalance){
         accounts = new double[n];
         for (int i = 0; i < n; i++) {
@@ -32,7 +34,7 @@ public class Bank {
         accounts[from]-=amount;
         System.out.printf("%10.2f from %d to %d",amount,from,to);
         accounts[to]+=amount;
-        //不会立即执行，需要当前锁被释放，然后重新去跟大家一起竞争。
+        //通知条件值得再检查一次 不会立即执行，需要当前锁被释放，然后重新去跟大家一起竞争。
         sufficientFunds.signalAll();
         System.out.printf(" Total Balance: %10.2f%n",getTotalBalance());
     }
