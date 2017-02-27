@@ -1,13 +1,13 @@
 package site.luoyu.annotation;
 
 
-@MethodAnnotation
+@MethodAnnotation(name = "test")
 public class ClassAnnoated {
 	
 	String field;
 	
 	public static void getAnnotationField() {
-		MethodAnnotation annotation = (MethodAnnotation) ClassAnnoated.class.getAnnotation(MethodAnnotation.class);
+		MethodAnnotation annotation = ClassAnnoated.class.getAnnotation(MethodAnnotation.class);
 		System.out.println(annotation.name());
 	}
 	

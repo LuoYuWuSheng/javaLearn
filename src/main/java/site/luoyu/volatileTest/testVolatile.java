@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class testVolatile {
 
-	//这里没能证明即使synchrized 不加volatile 也会有可见性问题
+	//这里没能证明即使synchrized 不加volatile 也会有可见性问题 volatile 需要与指令重排序配合
 	//理解错误，synchronized 能保证释放锁之前将所有的修改刷新到主内存
 	public static int volCount = 0;
 	public int count = 0;
@@ -21,7 +21,7 @@ public class testVolatile {
 	 * synchronized (this){}方法，两种方式效果相同
 	 * 对于static 成员，通过实例锁是没有用的，因为不同的实例依然能冲突的访问static变量
 	 */
-	//todo 证明实例锁没有用
+	//todo 证明实例锁对于类的静态成员没有用
 	public void instaceLockAdd() {
         synchronized (this){
             count++;
@@ -31,7 +31,7 @@ public class testVolatile {
 	
 	public static void main(String[] args) {
 		testVolatile instance = new testVolatile();
-		ArrayList<Thread> pool = new ArrayList<Thread>();
+		ArrayList<Thread> pool = new ArrayList();
 		for (int i = 0; i < 10000 ; i++) {
 			countAdd test = new countAdd(instance);
 			pool.add(test);
