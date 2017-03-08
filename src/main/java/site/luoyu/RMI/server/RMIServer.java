@@ -10,7 +10,7 @@ public class RMIServer {
 	public static void main(String[] args){
 		 try {
 			 	serviceImpl myServiceImplver = new serviceImpl();
-			 	LocateRegistry.createRegistry(8888); 
+			 	LocateRegistry.createRegistry(8888);
 	            //服务器端被额客户端调用
 			 	System.out.println("hellow world");
 			 	Naming.rebind("rmi://localhost:8888/RHello", myServiceImplver);

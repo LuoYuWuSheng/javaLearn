@@ -18,7 +18,6 @@ public class RMIClient {
 	public static void main(String[] args) {
 		try {
             //todo securityManage 有点意思
-            //todo rmi这个还有点问题，需要调试
 //          SecurityManager sm = new SecurityManager();
 //          System.setSecurityManager(sm);
 //			System.getProperty("java.security.policy");
