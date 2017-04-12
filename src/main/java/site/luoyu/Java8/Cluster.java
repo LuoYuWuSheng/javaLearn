@@ -1,6 +1,5 @@
 package site.luoyu.Java8;
 
-import java.lang.management.ThreadInfo;
 
 /**
  * Computer user xd
