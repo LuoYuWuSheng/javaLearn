@@ -13,6 +13,9 @@ public class StaticInnerClass {
      */
     private static String commonField = "OuterClassField";
 
+    /**
+     * 全限名与域的一致
+     */
     public static class InnerClass {
         /**
          * 与外部类的名称相同

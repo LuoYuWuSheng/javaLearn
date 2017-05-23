@@ -12,4 +12,9 @@ public class GenericMethod {
     public static  <T> void  printGenericMethod(T arg1){
         System.out.println(arg1.toString());
     }
+
+    private void test(GenericClass<?> input) {
+//        声明时如果使用？相当于每传类型参数
+//        input.useT();
+    }
 }

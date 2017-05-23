@@ -1,5 +1,6 @@
 package site.luoyu.GenericCode;
 
+
 /**
  * 泛型方法，利用的是类填填充
  * 如果类型有约束的话填充约束类型，如果类型没有约束的话填充Object
@@ -13,13 +14,18 @@ public class GenericClass<T>{
         generalMethod(1,"1",1.1);
     }
 
+    public void useT(T a) {
+        System.out.println("Using type from T");
+    }
+
     /**
      * 单一约束
      * @param a
      * @param b
-     * @param <T>
+     * @param <G>
+     *     类型参数，这里的T跟泛型类传入的T没有任何关系
      */
-    public <T extends Comparable> void typeConsist(T a, T b) {
+    public <G extends Comparable> void typeConsist(G a, G b) {
         System.out.println(a.compareTo(b));
     }
 

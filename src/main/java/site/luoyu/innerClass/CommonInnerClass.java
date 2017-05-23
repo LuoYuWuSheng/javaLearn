@@ -22,7 +22,10 @@ public class CommonInnerClass {
         return new InnerClass();
     }
 
-    private class InnerClass {
+    /**
+     * 内部类的权限，与属性的权限是相似的
+     */
+    public class InnerClass {
         /**
          * 与外部类的名称相同
          */
@@ -38,7 +41,8 @@ public class CommonInnerClass {
         CommonInnerClass commonInnerClass = new CommonInnerClass();
         //通过外部类创建一个内部类实例，并且释放到外部类的作用域之外，让其他人使用！这不是使用内部类的正确实践
         CommonInnerClass.InnerClass innerClass = commonInnerClass.releaseInner();
-        //在外部类的作用域外无法创建内部类，缺少this指针。不知道有没有显示的方法可以创建
-//        CommonInnerClass.InnerClass testCreate = new CommonInnerClass.InnerClass(commonInnerClass);
+        //在外部类的作用域外无法创建内部类，缺少this指针（this用来访问外部类的域）。不知道有没有显示的方法可以创建
+        //通过一个外部类的实例传递this指针，创建了内部类
+        CommonInnerClass.InnerClass testCreate = commonInnerClass.new InnerClass();
     }
 }
