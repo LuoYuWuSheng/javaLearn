@@ -13,6 +13,5 @@ public class javaFilePath {
 	private void relativePath(String path){
 		File myFile = new File(path);
 		System.out.println(myFile.getAbsolutePath());
-		myFile = null;
 	}
 }

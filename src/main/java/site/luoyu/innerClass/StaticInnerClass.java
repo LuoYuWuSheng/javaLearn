@@ -16,7 +16,7 @@ public class StaticInnerClass {
     /**
      * 全限名与域的一致
      */
-    public static class InnerClass {
+    public static class staInnerClass {
         /**
          * 与外部类的名称相同
          */
@@ -30,7 +30,7 @@ public class StaticInnerClass {
     }
 
     public static void main(String[] args) {
-        InnerClass innerClass = new InnerClass();
-        innerClass.getOuterClassField();
+        staInnerClass staInnerClass = new staInnerClass();
+        staInnerClass.getOuterClassField();
     }
 }
