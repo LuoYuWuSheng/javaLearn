@@ -4,6 +4,9 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Unit test for simple App.
  */
@@ -22,6 +25,8 @@ public class AppTest
      * @return the suite of tests being tested
      */
     public static Test suite() {
+        List<Integer> test = new ArrayList();
+        test.add(1);
         return new TestSuite(AppTest.class);
     }
 
