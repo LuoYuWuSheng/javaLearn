@@ -23,10 +23,11 @@ public class ServerHandler implements Runnable {
     @Override
     public void run() {
         try {
-            System.out.println("<<<<<<<<<<<<<<<<<<<< Message from Client :" + reader.readLine());
+            System.out.println("<<<<<<<<<<<< Message from Client :" + reader.readLine());
+            //阻塞客户端一分钟，此时客户端应该会有20（每3000ms创建一个）个模拟的客户端在等待响应
+            Thread.sleep(60000);
             writer.write("I am Server happy to know you\n");
             writer.flush();
-            Thread.sleep(10000);
             socket.close();
         } catch (IOException e) {
             e.printStackTrace();
