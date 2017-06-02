@@ -25,7 +25,7 @@ public class AsyncServer implements Runnable {
             }
             this.latch = latch = new CountDownLatch(1);
             this.asynchronousServerSocketChannel = AsynchronousServerSocketChannel.open();
-            asynchronousServerSocketChannel.bind(new InetSocketAddress(port));
+            asynchronousServerSocketChannel.bind(new InetSocketAddress(this.port));
             System.out.println("============Async Server is Started!============");
         } catch (IOException e) {
             e.printStackTrace();
@@ -52,5 +52,11 @@ public class AsyncServer implements Runnable {
     public void doAccept() {
         //注册监听处理程序
         asynchronousServerSocketChannel.accept(this, new AcceptCompletionHandler());
+    }
+
+    public static void main(String[] args) {
+        AsyncServer serverThread = new AsyncServer();
+        Thread Server = new Thread(serverThread);
+        Server.start();
     }
 }
