@@ -20,8 +20,6 @@ public class GenericClass<T>{
 
     /**
      * 单一约束
-     * @param a
-     * @param b
      * @param <G>
      *     类型参数，这里的T跟泛型类传入的T没有任何关系
      */

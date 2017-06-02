@@ -1,5 +1,7 @@
 package site.luoyu.GenericCode;
 
+import java.util.List;
+
 /**
  * Created by xd on 2016/11/25.
  * 泛型接口
@@ -18,3 +20,13 @@ class implGenInterface implements GenericInterface<Double>{
         return null;
     }
 }
+
+/**
+ * 如果原接口不受限则继承后不能让原接口变成受限的。
+ * class implGenInterface2 <H> implements GenericInterface<H extends List>{
+ *
+ * @Override public H testGenericInterface(H arg1) {
+ * return null;
+ * }
+ * }
+ **/

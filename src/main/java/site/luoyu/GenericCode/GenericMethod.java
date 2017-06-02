@@ -1,5 +1,7 @@
 package site.luoyu.GenericCode;
 
+import java.util.List;
+
 /**
  * Created by xd on 2016/11/21.
  */
@@ -14,7 +16,7 @@ public class GenericMethod {
     }
 
     private void test(GenericClass<?> input) {
-//        声明时如果使用？相当于每传类型参数
+//        声明时如果使用？相当于没传类型参数
 //        input.useT();
     }
 }

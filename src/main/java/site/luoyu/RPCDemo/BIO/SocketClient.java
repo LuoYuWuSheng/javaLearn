@@ -26,9 +26,9 @@ public class SocketClient {
             System.out.println("Connect seccess");
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             out = new PrintWriter(socket.getOutputStream());
-            out.write("Hellow I am from client\n");
+            Thread.sleep(60000);
+            out.write("Hello I am from client! I blocked Your for 60000ms\n");
             out.flush();
-            //客户端不休眠，被服务端阻塞
             String ServerData = in.readLine();
             System.out.println(">>>>>>>>>>Message from server" + ServerData);
 //            Thread.sleep(60000);
