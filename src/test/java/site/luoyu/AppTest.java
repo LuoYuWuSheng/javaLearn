@@ -34,6 +34,8 @@ public class AppTest
      * Rigourous Test :-)
      */
     public void testApp() {
+        App app = new App();
+        App.main(new String[]{"111"});
         assertTrue(true);
     }
 }

@@ -9,8 +9,7 @@ import java.nio.channels.CompletionHandler;
  * Created by 张洋 on 2017/6/1.
  * 一个链接成功的处理器
  */
-public class AcceptCompletionHandler implements
-        CompletionHandler<AsynchronousSocketChannel, AsyncServer> {
+public class AcceptCompletionHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncServer> {
 
     @Override
     public void completed(AsynchronousSocketChannel result, AsyncServer attachment) {
@@ -23,8 +22,8 @@ public class AcceptCompletionHandler implements
 
     @Override
     public void failed(Throwable exc, AsyncServer attachment) {
-        //todo 失败释放
-        attachment.latch.countDown();
+//        attachment.latch.countDown();
         System.out.println("----- get result error ----");
+//        attachment.asynchronousServerSocketChannel.accept(attachment, this);
     }
 }

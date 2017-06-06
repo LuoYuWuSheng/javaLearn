@@ -9,10 +9,20 @@ import java.nio.channels.ServerSocketChannel;
  * Created by 张洋 on 2017/5/31.
  */
 public class NIOServer {
+    /**
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
-        ServerSocketChannel server = ServerSocketChannel.open();
-        server.socket().bind(new InetSocketAddress("localhost", 5051));
-        //设置为非阻塞模式
-        server.configureBlocking(false);
+        int port = 8080;
+        if (args != null && args.length > 0) {
+            try {
+                port = Integer.valueOf(args[0]);
+            } catch (NumberFormatException e) {
+                // 采用默认值
+            }
+        }
+        MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
+        new Thread(timeServer, "NIO-MultiplexerTimeServer-001").start();
     }
 }
