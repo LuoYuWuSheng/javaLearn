@@ -70,3 +70,8 @@ INSERT INTO SC VALUES (7, 2, 3, 90);
 INSERT INTO SC VALUES (8, 3, 1, 70);
 INSERT INTO SC VALUES (9, 3, 2, 70);
 INSERT INTO SC VALUES (10, 4, 1, 60);
+
+# 查询分数最高人姓名
+-- select students.*,temp.Course_id from students,
+-- (select Stu_id,Course_id from SC group by Course_id)
+-- AS temp where students.Stu_id=temp.Stu_id;
