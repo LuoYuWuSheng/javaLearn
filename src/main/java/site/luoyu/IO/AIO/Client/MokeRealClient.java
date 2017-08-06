@@ -1,4 +1,4 @@
-package site.luoyu.RPCDemo.AIO.Client;
+package site.luoyu.IO.AIO.Client;
 
 /**
  * Computer user xd

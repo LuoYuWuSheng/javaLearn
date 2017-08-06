@@ -1,4 +1,4 @@
-package site.luoyu.RPCDemo.Netty;
+package site.luoyu.IO.Netty;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelPipeline;
