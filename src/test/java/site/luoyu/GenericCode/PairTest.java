@@ -11,13 +11,13 @@ import org.junit.Test;
 * @author <Authors name> 
 * @since <pre>11/21/2016</pre> 
 * @version 1.0 
-*/ 
-public class GenericClassTest {
-    GenericClass test;
+*/
+public class PairTest {
+    Pair test;
 
 @Before
 public void before() throws Exception {
-    this.test = new GenericClass();
+    this.test = new Pair();
 } 
 
 @After
