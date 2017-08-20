@@ -1,11 +1,20 @@
 package site.luoyu.Concurrent.Executor;
 
-import java.util.ArrayList;
 import java.util.concurrent.*;
 
 /**
  * Computer user xd
  * Created by 张洋 on 2017/8/12.
+ *
+ * Executor框架的典型应用场景？？
+ * ExecutorService executor = Executors.newFixedThreadPool()等方法创建服务端的线程池
+ * 然后通过execute，Submit等方法提交任务。
+ * submit 最终会产生一个FutureTask（利用AQS实现）对象，将Runnable封装在里面。‘
+ * submit 三种重载
+ * 1、submit（Runnable）返回FutureTask<Object>
+ * 2、submit（Runnable,T result）返回FutureTask<T>
+ * 3、submit（Callable<T>）返回FutureTask<T>
+ *     还可以通过Executors.callable(Runnable,T res)将Runnable封装成一个Callable
  */
 public class ShowFeature {
     static class Task implements Runnable {
@@ -40,10 +49,10 @@ public class ShowFeature {
         Future<Math> result = null;
         Math res = null;
         for (int i = 0; i < 5; i++) {
-//            result = executor.submit(new Task("zy" + i, latch));
-            Callable<Math> call = Executors.callable(new Task("zy" + i, latch));
+            //submit 总共有3中重载1、Runnable 2、泛型，传入Result 3、callable
+//            result = executor.submit(new Task("zy" + i, latch),res);
+            Callable<Math> call = Executors.callable(new Task("zy" + i, latch), res);
             result = executor.submit(call);
-
         }
         try {
             res = result.get();

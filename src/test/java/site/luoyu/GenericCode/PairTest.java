@@ -17,7 +17,7 @@ public class PairTest {
 
 @Before
 public void before() throws Exception {
-    this.test = new Pair();
+    this.test = new Pair(new Object(), new Object());
 } 
 
 @After
