@@ -11,4 +11,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface MethodAnnotation {
 	public String name() default "张洋";
+
+    public String job() default "student";
 }

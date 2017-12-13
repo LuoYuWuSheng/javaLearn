@@ -10,8 +10,10 @@ import java.util.Date;
  * 1、出入一个固定的类型（无限定）
  * 2、传入一类类型通配符？extends A & B，：？super A等（有限定）
  * （思考T extends A 与 ？ extends A 区别！
- *前者只能在定义泛型类或方法的时候出现，而后者主要是为了表示普通方法传入的参数的限制，而不是泛型
- *比如A 类test(? extends B)，表示出入B的子类，这时候就不能用T extends B了，因为test根本不是泛型方法）
+ *a、前者只能在定义泛型类或方法的时候出现，而后者主要是为了表示普通方法传入的参数的限制，而不是泛型
+ *比如A 类test(? extends B)，表示出入B的子类，这时候就不能用T extends B了，因为test根本不是泛型方法
+ *b、想表示某个泛型的任意子类，则需要将类型参数想写成？。EG：function（Comparator<?>） a）表示接受任何类型参数的Comparator
+ * 
  * 使用泛型的位置：
  * 1、泛型类
  * 2、泛型接口
